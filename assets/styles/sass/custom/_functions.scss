@@ -1,0 +1,7 @@
+// control all unit font-size
+$browser-context: 16; // Default
+
+@function unit($unit, $context: $browser-context) {
+    $value: $unit / $context;
+    @return #{$value}em;
+}

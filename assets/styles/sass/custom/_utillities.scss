@@ -1,0 +1,37 @@
+%col-no-padding {
+
+    >.col,
+    >[class*="col-"] {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+    @extend %col-no-padding;
+}
+
+// .container-fluid {
+//     max-width: 1336px;
+
+//     .row {
+//         @extend %col-no-padding;
+//     }
+// }
+
+.container {
+    max-width: 1170px;
+
+    .row {
+        @extend %col-no-padding;
+    }
+}
+
+.m15-n {
+    margin: {
+        left: -15px;
+        right: -15px;
+    }
+}

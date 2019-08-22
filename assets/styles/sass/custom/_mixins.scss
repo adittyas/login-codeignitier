@@ -1,0 +1,86 @@
+@mixin font-face($font-family, $url) {
+    @font-face {
+        font-family: '#{$font-family}';
+        src: url('#{$url}.eot');
+        src: url('#{$url}.eot?#iefix') format('embedded-opentype'),
+        url('#{$url}.woff') format('woff'),
+        url('#{$url}.woff2') format('woff2'),
+        url('#{$url}.ttf') format('truetype'),
+        url('#{$url}.svg') format('svg');
+        @content;
+    }
+}
+
+@function result($minpad, $maxpad, $i) {
+    $first: $minpad/$maxpad;
+
+    @if $i==0 {
+        @return unit($first * $maxpad);
+    }
+
+    @else {
+        $gap: ((1 - $first)/4)*$i+$first;
+        @return unit($maxpad * $gap);
+    }
+}
+
+@mixin med {
+
+    $medias: xs, sm, md, lg, xl;
+
+    @each $media in $medias {
+        @include media-breakpoint-up($media) {
+            @content;
+        }
+    }
+}
+
+@mixin flexible-mp($target, $side, $min, $max) {
+    $base-font-size: 16;
+    $axis: top, bottom, left, right;
+    $i: 0;
+
+    @if $target==margin or $target==padding {
+        @if $side==top or $side==bottom or $side==left or $side==right {
+            @include med {
+                #{$target}-#{$side}: result($min, $max, $i);
+                $i: $i+1;
+            }
+        }
+
+        @else if $side==vertical {
+            @include med {
+                #{$target}-top: result($min, $max, $i);
+                #{$target}-bottom: result($min, $max, $i);
+                $i: $i+1;
+            }
+        }
+
+        @else if $side==horizontal {
+            @include med {
+                #{$target}-left: result($min, $max, $i);
+                #{$target}-right: result($min, $max, $i);
+                $i: $i+1;
+            }
+        }
+
+        @else if $side==all {
+            @include med {
+                @each $xy in $axis {
+                    #{$target}-#{$xy}: result($min, $max, $i);
+
+                }
+
+                $i: $i+1;
+            }
+        }
+
+        @else {
+            @error "error second argument";
+        }
+    }
+
+    @else {
+        @error "please fill in the margin or padding in the first argument";
+    }
+}

@@ -1,0 +1,39 @@
+.bg-gradient-custom-login {
+  background-image: radial-gradient(circle farthest-corner at 1.5% 2.8%, #45edf4 23.2%, #1af39e 45%, #f14ea3 93.1%);
+}
+.bg-gradient-custom-regis {
+  background-image: radial-gradient(circle farthest-corner at 10% 20%, #e2c1e8 14.3%, rgba(229, 197, 156, 0.75) 63.7%);
+}
+.bg-gradient-custom-forgot {
+  background-image: radial-gradient(circle farthest-corner at 10% 20%, #5798eb 0%, #85ded5 67%);
+}
+
+.bg-gradient-custom-dark {
+  background: #41295a;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #2f0743, #41295a);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #2f0743, #41295a);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.btn-primary {
+  background: #C33764;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #1D2671, #C33764);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #1D2671, #C33764);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  opacity: 0.8;
+  transition: 1s;
+}
+.btn-primary:hover {
+  opacity: 1;
+}
+
+.sidebar .nav-item .nav-link {
+  padding-top: 0.25rem;
+  padding-bottom: 0.75rem;
+}
+
+/*# sourceMappingURL=style.css.map */

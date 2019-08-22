@@ -1,0 +1,42 @@
+.bg-gradient-custom {
+	&-login {
+		background-image: radial-gradient(circle farthest-corner at 1.5% 2.8%, rgba(69, 237, 244, 1) 23.2%, rgba(26, 243, 158, 1) 45%, rgba(241, 78, 163, 1) 93.1%);
+	}
+
+	&-regis {
+		background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(226, 193, 232, 1) 14.3%, rgba(229, 197, 156, 0.75) 63.7%);
+	}
+
+	&-forgot {
+		background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(87, 152, 235, 1) 0%, rgba(133, 222, 213, 1) 67%);
+	}
+}
+
+.bg-gradient-custom-dark {
+	background: #41295a;
+	/* fallback for old browsers */
+	background: -webkit-linear-gradient(to left, #2f0743, #41295a);
+	/* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to left, #2f0743, #41295a);
+	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.btn-primary {
+	background: #C33764;
+	/* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #1D2671, #C33764);
+	/* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #1D2671, #C33764);
+	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	opacity: .8;
+	transition: 1s;
+
+	&:hover {
+		opacity: 1;
+	}
+}
+
+.sidebar .nav-item .nav-link {
+	padding-top: .25rem;
+	padding-bottom: .75rem;
+}
