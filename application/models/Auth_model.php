@@ -80,8 +80,8 @@ class Auth_model extends CI_Model
         $config = [
             'protocol' => 'smtp',
             'smtp_host' => 'ssl://smtp.gmail.com',
-            'smtp_user' => 'haccess.ads@gmail.com',
-            'smtp_pass' => 'antiplaque',
+            'smtp_user' => 'abc@gmail.com', // enter your valid email here
+            'smtp_pass' => '*********', // enter your password email here
             'smtp_port' => 465,
             'mailtype' => 'html',
             'chartype' => 'utf-8',
@@ -90,7 +90,7 @@ class Auth_model extends CI_Model
 
         $this->email->initialize($config);
 
-        $this->email->from('haccess.ads@gmail.com', 'aditya programming');
+        $this->email->from('abc@gmail.com', 'admin');
         $this->email->to($email);
         if ($type == 'verify') {
             $this->email->subject('Acount Verification');
